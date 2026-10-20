@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Invitación Camila Juliao</title>
+<title>Invitación Camila</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Playfair+Display:wght@700&family=Lora:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
   #par{left:55.5%;top:calc(1516/var(--H)*100%);width:80cqw;white-space:normal;text-wrap:balance;font:italic 700 3.1cqw/1.4 Lora,Georgia,"Times New Roman",serif;color:var(--tinta);font-weight:700}
   #fal{left:59.8%;top:calc(1895/var(--H)*100%);font-size:2.5cqw;letter-spacing:.4em;margin-left:.2em;font-weight:700}
   #gra{left:59.7%;top:calc(2025/var(--H)*100%);font-size:7.4cqw}
-  #dic{left:62%;top:calc(2520/var(--H)*100%);font-size:3cqw;letter-spacing:.1em;font-weight:700}
+  #dic{left:62%;top:calc(2520/var(--H)*100%);font-size:2.55cqw;letter-spacing:.1em;font-weight:700}
   #sab{left:39.3%;top:calc(2643/var(--H)*100%);font-size:2.9cqw;letter-spacing:.05em;font-weight:700}
   #hor{left:84.2%;top:calc(2643/var(--H)*100%);font-size:2.9cqw;letter-spacing:.04em;font-weight:700}
   #dia{left:62%;top:calc(2624/var(--H)*100%);font:700 7.8cqw/1 "Playfair Display",Georgia,serif;color:#9a6a1c}
@@ -146,7 +146,7 @@
 </style>
 </head>
 <body>
-<audio id="musica" src="musica.mp3" preload="auto" loop playsinline></audio>
+<audio id="musica" src="musica.mp3#t=57" preload="auto" loop playsinline></audio>
 <button id="musBtn" type="button" aria-label="Pausar o reproducir la música"><i></i><i></i><i></i><i></i></button>
 <div id="intro" role="dialog" aria-label="Video de bienvenida">
   <div class="stage">
@@ -158,11 +158,11 @@
   </div>
 </div>
 <div id="inv">
-  <img src="invitacion.webp" alt="Fondo de la invitación de 15 años de Camila Juliao" width="2160" height="4892">
+  <img src="invitacion.webp" alt="Fondo de la invitación de 15 años de Camila" width="2160" height="4892">
 
   <p id="pre" class="t caps">Acompáñanos a celebrar<br>los 15 años de:</p>
-  <h1 id="nom" class="t scr" style="font-weight:400">Camila Juliao</h1>
-  <p id="par" class="t">Con la bendición de Dios y el amor de mi familia, me siento muy feliz de llegar a este momento de mi vida. Los invito a compartir conmigo este día tan especial.</p>
+  <h1 id="nom" class="t scr" style="font-weight:400">Camila</h1>
+  <p id="par" class="t">Con gratitud a Dios y a mi familia, te invito a celebrar mis quince años.</p>
 
   <p id="fal" class="t caps">Faltan</p>
   <p id="gra" class="t scr">Para mi Gran Día</p>
@@ -189,7 +189,7 @@
   <a id="b1" class="btn" href="https://maps.app.goo.gl/a8GFQdtFrKW48Ck57" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
     <span>Ver<br>ubicación</span></a>
-  <a id="b2" class="btn" href="https://wa.me/18293403146?text=Confirmo%20mi%20asistencia%20a%20los%2015%20a%C3%B1os%20de%20Camila%20Juliao" target="_blank" rel="noopener">
+  <a id="b2" class="btn" href="https://wa.me/18293403146?text=Confirmo%20mi%20asistencia%20a%20los%2015%20a%C3%B1os%20de%20Camila" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.1.1.6-.1 1.2z"/></svg>
     <span>Confirmar<br>asistencia</span></a>
 
@@ -212,8 +212,13 @@
   function subir(){ // fade-in (en iOS el volumen es fijo; no afecta)
     var v=0, k=setInterval(function(){v=Math.min(1,v+.05);try{a.volume=v}catch(e){} if(v>=1)clearInterval(k)},80);
   }
+  var INICIO=57, saltada=false;   // la canción entra desde el segundo 57
+  function saltar(){ if(saltada) return; try{ if(a.currentTime<INICIO-1) a.currentTime=INICIO; saltada=a.currentTime>=INICIO-1 }catch(e){} }
+  a.addEventListener("loadedmetadata",function(){ if(!empezada) saltar() });
+  a.addEventListener("playing",saltar);
   window.sonarMusica=function(){
     if(empezada||pausadaPorUsuario) return;
+    saltar();
     var p=a.play();
     empezada=true; subir();
     if(p&&p.catch) p.catch(function(){empezada=false; marcar()});
@@ -283,20 +288,17 @@
 <dialog id="vest" aria-labelledby="vt">
   <h2 id="vt">Código de vestimenta</h2>
   <div class="formal">Formal</div>
-  <p>Color exclusivo</p>
+  <p>Colores exclusivos</p>
   <div class="dots"><span class="dot rojo" role="img" aria-label="Rojo, no usar"></span><span class="dot oro" role="img" aria-label="Dorado, no usar"></span></div>
-  <small>Rojo y dorado</small>
+  <small>Los colores <b style="color:var(--vino)">rojo</b> y <b style="color:#9a6a1c">dorado</b> son exclusivos para la quinceañera. Te pedimos amablemente no usarlos.</small>
   <button type="button" onclick="vest.close()">Cerrar</button>
 </dialog>
 <dialog id="reg" aria-labelledby="rt">
   <h2 id="rt">Mesa de regalos</h2>
   <div class="scr">Con cariño</div>
-  <!-- Lista principal de Amazon -->
-  <a id="amz" class="lista" href="https://www.amazon.com/hz/wishlist/dl/invite/AQICAHild4Vpadjqcz7bdgUf6Qu6-OaRt7P_FJRNNbyMlg-OQwEi748cC6sCjQY0-hkCCu6rAAAAkTCBjgYJKoZIhvcNAQcGoIGAMH4CAQAweQYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzstBiATmlcl3rveBMCARCATPt-3jUNcp5bmUaHBR-s3KrpAVqkVS3lzfu8MKn2Xt-5lQXTB5kZyCWbgXNmtewkSti50xE8LqsX5kq582WmnHzGZD4r2rYeM6dSP-I?ref_=wl_share" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-2.2A3 3 0 0 0 12 3.8 3 3 0 0 0 6.2 7H4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8h1a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM15 5a1 1 0 1 1 0 2h-2a2 2 0 0 1 2-2zM9 5a2 2 0 0 1 2 2H9a1 1 0 1 1 0-2zm2 15H7v-8h4zm0-10H5V9h6zm6 10h-4v-8h4zm2-10h-6V9h6z"/></svg>
-    Ver lista en Amazon</a>
-  <div class="sep">Otras ideas</div>
   <ul>
+    <li><em>Lista de regalos · Amazon</em><b>Lista de deseos de Camila</b>
+      <a href="https://www.amazon.com/hz/wishlist/dl/invite/AQICAHild4Vpadjqcz7bdgUf6Qu6-OaRt7P_FJRNNbyMlg-OQwEi748cC6sCjQY0-hkCCu6rAAAAkTCBjgYJKoZIhvcNAQcGoIGAMH4CAQAweQYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzstBiATmlcl3rveBMCARCATPt-3jUNcp5bmUaHBR-s3KrpAVqkVS3lzfu8MKn2Xt-5lQXTB5kZyCWbgXNmtewkSti50xE8LqsX5kq582WmnHzGZD4r2rYeM6dSP-I?ref_=wl_share" target="_blank" rel="noopener"><span>amazon.com/hz/wishlist/dl/invite/AQICAHild4Vpadjqcz7bdgUf6Qu6</span></a></li>
     <li><em>Gift cards</em><b>Tarjetas de regalo</b></li>
     <li><em>Pulsera Pandora</em><b>Moments Sparkling Infinity Heart Clasp Snake Chain</b>
       <a href="https://us.pandora.net/en/bracelets/charm-bracelets/pandora-moments-sparkling-infinity-heart-clasp-snake-chain-bracelet/592645C01.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/bracelets/charm-bracelets/pandora-moments</span></a></li>
