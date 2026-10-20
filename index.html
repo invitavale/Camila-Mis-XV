@@ -24,9 +24,9 @@
   .scr{text-shadow:0 0 .6cqw rgba(255,248,235,.9)}
 
   /* textos */
-  #pre{left:51.1%;top:calc(705/var(--H)*100%);font-size:3cqw;letter-spacing:.1em;line-height:1.55;font-weight:700}
-  #nom{left:52.7%;top:calc(950/var(--H)*100%);font-size:15.5cqw}
-  #par{left:55.5%;top:calc(1516/var(--H)*100%);width:80cqw;white-space:normal;text-wrap:balance;font:italic 700 3.1cqw/1.4 Lora,Georgia,"Times New Roman",serif;color:var(--tinta);font-weight:700}
+  #pre{left:51.1%;top:calc(660/var(--H)*100%);font-size:3cqw;letter-spacing:.1em;line-height:1.55;font-weight:700}
+  #nom{left:52.7%;top:calc(1035/var(--H)*100%);font-size:15cqw}
+  #par{left:55.5%;top:calc(1530/var(--H)*100%);width:80cqw;white-space:normal;font:italic 700 3.9cqw/1.5 Lora,Georgia,"Times New Roman",serif;color:var(--tinta);font-weight:700}
   #fal{left:59.8%;top:calc(1895/var(--H)*100%);font-size:2.5cqw;letter-spacing:.4em;margin-left:.2em;font-weight:700}
   #gra{left:59.7%;top:calc(2025/var(--H)*100%);font-size:7.4cqw}
   #dic{left:62%;top:calc(2520/var(--H)*100%);font-size:2.55cqw;letter-spacing:.1em;font-weight:700}
@@ -46,7 +46,7 @@
   #ubi i{font:italic 700 3cqw/1.3 Lora,Georgia,serif;color:var(--tinta);display:block}
 
   /* botones */
-  .btn{position:absolute;top:calc(3175/var(--H)*100%);height:calc(240/var(--H)*100%);box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:1.8cqw;
+  .btn{position:absolute;top:calc(3195/var(--H)*100%);height:calc(205/var(--H)*100%);box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:1.8cqw;
     text-decoration:none;color:#fff3dc;font:700 2.5cqw/1.35 var(--caps);letter-spacing:.06em;text-transform:uppercase;text-align:left;
     background:linear-gradient(180deg,#a3182a 0%,#7a0f1c 55%,#5e0914 100%);border:.4cqw solid #c9a24b;border-radius:999px;
     box-shadow:0 .6cqw 1.6cqw rgba(70,6,14,.35),inset 0 .2cqw .4cqw rgba(255,226,170,.35)}
@@ -59,7 +59,7 @@
     display:flex;align-items:center;justify-content:center;background:rgba(255,248,235,.7)}
   .pill::after{content:"\203A";display:grid;place-items:center;width:3.6cqw;height:3.6cqw;border-radius:50%;background:#a67a2c;color:#fff;font:700 3.2cqw/1 Georgia,serif;padding-bottom:.3cqw;box-sizing:border-box}
   #p1{left:42%;width:18.6%}#p2{left:71.3%;width:18.8%}
-  #esp{left:66.7%;top:calc(4235/var(--H)*100%);font-size:9cqw}
+  #esp{left:67.6%;top:calc(4228/var(--H)*100%);font-size:7.6cqw}
   a:focus-visible{outline:2px solid #f3d89b;outline-offset:2px}
   /* ventana de vestimenta */
   #vest{border:2px solid #c9a24b;border-radius:22px;padding:26px 24px 22px;max-width:min(90vw,380px);background:linear-gradient(180deg,#fff8ee,#f6e6d4);
@@ -80,9 +80,9 @@
     background:linear-gradient(180deg,#a3182a,#5e0914);padding:10px 26px;cursor:pointer}
 
   /* ===== botón de música ===== */
-  #musBtn{position:fixed;z-index:40;right:max(14px,calc(50% - 240px + 14px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
-    width:46px;height:46px;border-radius:50%;border:2px solid #c9a24b;background:linear-gradient(180deg,#a3182a,#5e0914);
-    box-shadow:0 6px 18px rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:0 0 13px;box-sizing:border-box;cursor:pointer;
+  #musBtn{position:fixed;z-index:40;right:max(14px,calc(50% - 240px + 14px));top:calc(12px + env(safe-area-inset-top,0px));
+    width:40px;height:40px;border-radius:50%;border:2px solid #c9a24b;background:linear-gradient(180deg,#a3182a,#5e0914);
+    box-shadow:0 6px 18px rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:0 0 11px;box-sizing:border-box;cursor:pointer;
     opacity:0;pointer-events:none;transition:opacity .6s}
   html.revealed #musBtn{opacity:1;pointer-events:auto}
   #musBtn i{width:3px;height:6px;background:#f3d89b;border-radius:2px}
@@ -146,7 +146,7 @@
 </style>
 </head>
 <body>
-<audio id="musica" src="musica.mp3#t=57" preload="auto" loop playsinline></audio>
+<audio id="musica" src="musica.mp3?v=2" preload="auto" loop playsinline></audio>
 <button id="musBtn" type="button" aria-label="Pausar o reproducir la música"><i></i><i></i><i></i><i></i></button>
 <div id="intro" role="dialog" aria-label="Video de bienvenida">
   <div class="stage">
@@ -162,7 +162,7 @@
 
   <p id="pre" class="t caps">Acompáñanos a celebrar<br>los 15 años de:</p>
   <h1 id="nom" class="t scr" style="font-weight:400">Camila</h1>
-  <p id="par" class="t">Con gratitud a Dios y a mi familia, te invito a celebrar mis quince años.</p>
+  <p id="par" class="t">Con gratitud a Dios y a mi familia,<br>te invito a celebrar<br>mis quince años.</p>
 
   <p id="fal" class="t caps">Faltan</p>
   <p id="gra" class="t scr">Para mi Gran Día</p>
@@ -212,7 +212,7 @@
   function subir(){ // fade-in (en iOS el volumen es fijo; no afecta)
     var v=0, k=setInterval(function(){v=Math.min(1,v+.05);try{a.volume=v}catch(e){} if(v>=1)clearInterval(k)},80);
   }
-  var INICIO=57, saltada=false;   // la canción entra desde el segundo 57
+  var INICIO=0, saltada=false;   // segundo en que entra la canción (0 = desde el inicio)
   function saltar(){ if(saltada) return; try{ if(a.currentTime<INICIO-1) a.currentTime=INICIO; saltada=a.currentTime>=INICIO-1 }catch(e){} }
   a.addEventListener("loadedmetadata",function(){ if(!empezada) saltar() });
   a.addEventListener("playing",saltar);
