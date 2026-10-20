@@ -79,6 +79,41 @@
   #vest button{font:700 14px var(--caps);letter-spacing:.12em;text-transform:uppercase;color:#f8ead0;border:2px solid #c9a24b;border-radius:999px;
     background:linear-gradient(180deg,#a3182a,#5e0914);padding:10px 26px;cursor:pointer}
 
+  /* ===== botón de música ===== */
+  #musBtn{position:fixed;z-index:40;right:max(14px,calc(50% - 240px + 14px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    width:46px;height:46px;border-radius:50%;border:2px solid #c9a24b;background:linear-gradient(180deg,#a3182a,#5e0914);
+    box-shadow:0 6px 18px rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:0 0 13px;box-sizing:border-box;cursor:pointer;
+    opacity:0;pointer-events:none;transition:opacity .6s}
+  html.revealed #musBtn{opacity:1;pointer-events:auto}
+  #musBtn i{width:3px;height:6px;background:#f3d89b;border-radius:2px}
+  #musBtn.on i{animation:eq .9s ease-in-out infinite alternate}
+  #musBtn.on i:nth-child(2){animation-delay:-.3s}#musBtn.on i:nth-child(3){animation-delay:-.6s}#musBtn.on i:nth-child(4){animation-delay:-.15s}
+  #musBtn:not(.on)::after{content:"";position:absolute;width:30px;height:2px;background:#f3d89b;transform:rotate(-45deg);top:50%;left:50%;margin:-1px 0 0 -15px}
+  @keyframes eq{from{height:5px}to{height:18px}}
+
+  /* ===== ventana de regalos ===== */
+  #reg{border:2px solid #c9a24b;border-radius:22px;padding:26px 20px 22px;width:min(90vw,400px);max-height:86dvh;box-sizing:border-box;overflow:auto;
+    background:linear-gradient(180deg,#fff8ee,#f6e6d4);color:var(--tinta);text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:var(--caps)}
+  #reg::backdrop{background:rgba(30,3,7,.72);backdrop-filter:blur(3px)}
+  #reg h2{margin:0 0 2px;font:700 18px/1.3 var(--caps);letter-spacing:.12em;text-transform:uppercase;color:var(--vino)}
+  #reg .scr{font-size:44px;margin:2px 0 12px;text-shadow:none}
+  #reg .lista{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;margin:0 auto 18px;padding:13px 22px;width:100%;box-sizing:border-box;
+    font:700 13px/1.2 var(--caps);letter-spacing:.12em;text-transform:uppercase;color:#f8ead0;border:2px solid #c9a24b;border-radius:999px;
+    background:linear-gradient(180deg,#a3182a,#5e0914);box-shadow:0 4px 12px rgba(70,6,14,.3)}
+  #reg .lista svg{width:18px;height:18px;fill:#f3d89b;flex:none}
+  #reg .sep{display:flex;align-items:center;gap:10px;margin:0 0 12px;font:700 11px var(--caps);letter-spacing:.16em;text-transform:uppercase;color:#9a6a1c}
+  #reg .sep::before,#reg .sep::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a24b,transparent)}
+  #reg ul{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;text-align:left}
+  #reg li{border:1px solid rgba(184,138,59,.55);border-radius:14px;background:rgba(255,255,255,.55);padding:11px 14px;min-width:0}
+  #reg li em{display:block;font:700 10px var(--caps);letter-spacing:.16em;text-transform:uppercase;color:#9a6a1c;font-style:normal;margin-bottom:3px}
+  #reg li b{display:block;font:italic 700 15px/1.3 Lora,Georgia,serif;color:var(--tinta)}
+  #reg li a{display:flex;align-items:center;gap:6px;margin-top:6px;text-decoration:none;color:var(--vino);font:600 12px/1.2 Georgia,serif;min-width:0}
+  #reg li a span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;flex:0 1 auto;min-width:0;border-bottom:1px solid rgba(138,18,32,.35)}
+  #reg li a::after{content:"Ver \203A";margin-left:auto;font:700 10px var(--caps);letter-spacing:.14em;text-transform:uppercase;color:#fff3dc;
+    background:#a67a2c;border-radius:999px;padding:5px 10px;flex:none}
+  #reg button{font:700 14px var(--caps);letter-spacing:.12em;text-transform:uppercase;color:#f8ead0;border:2px solid #c9a24b;border-radius:999px;
+    background:linear-gradient(180deg,#a3182a,#5e0914);padding:10px 26px;cursor:pointer}
+
   /* ===== INTRO (video) + transición ===== */
   html.intro,html.intro body{overflow:hidden;height:100%}
   #intro{position:fixed;inset:0;z-index:50;background:#1a0306;display:flex;justify-content:center;opacity:1}
@@ -111,6 +146,8 @@
 </style>
 </head>
 <body>
+<audio id="musica" src="musica.mp3" preload="auto" loop playsinline></audio>
+<button id="musBtn" type="button" aria-label="Pausar o reproducir la música"><i></i><i></i><i></i><i></i></button>
 <div id="intro" role="dialog" aria-label="Video de bienvenida">
   <div class="stage">
     <video id="vid" muted poster="poster.jpg" playsinline webkit-playsinline preload="auto"><source src="intro.mp4" type="video/mp4"><source id="srcFin" src="intro.webm" type="video/webm"></video>
@@ -159,10 +196,44 @@
   <p class="t caps col" style="left:51.3%">Código de<br>vestimenta</p>
   <p class="t caps col" style="left:80.6%">Mesa de<br>regalos</p>
   <a id="p1" class="pill" href="#vestimenta" aria-label="Ver código de vestimenta" onclick="vest.showModal();return false"></a>
-  <a id="p2" class="pill" href="#regalos" aria-label="Ver mesa de regalos"></a>
+  <a id="p2" class="pill" href="#regalos" aria-label="Ver mesa de regalos" onclick="reg.showModal();return false"></a>
 
   <p id="esp" class="t scr">¡Te esperamos!</p>
 </div>
+<script>
+/* ===== Música de fondo =====
+   Safari/iOS solo deja sonar audio si play() se llama dentro de un toque del usuario.
+   Por eso se arranca en el mismo toque que reproduce el video ("Toca para abrir"). */
+(function(){
+  var a=document.getElementById("musica"), btn=document.getElementById("musBtn"),
+      empezada=false, pausadaPorUsuario=false, porFondo=false;
+  a.volume=0;
+  function marcar(){btn.classList.toggle("on",!a.paused)}
+  function subir(){ // fade-in (en iOS el volumen es fijo; no afecta)
+    var v=0, k=setInterval(function(){v=Math.min(1,v+.05);try{a.volume=v}catch(e){} if(v>=1)clearInterval(k)},80);
+  }
+  window.sonarMusica=function(){
+    if(empezada||pausadaPorUsuario) return;
+    var p=a.play();
+    empezada=true; subir();
+    if(p&&p.catch) p.catch(function(){empezada=false; marcar()});
+  };
+  a.addEventListener("play",marcar); a.addEventListener("pause",marcar);
+  btn.addEventListener("click",function(e){
+    e.stopPropagation();
+    if(a.paused){pausadaPorUsuario=false;empezada=true;a.volume=1;a.play()}else{pausadaPorUsuario=true;a.pause()}
+  });
+  // respaldo: si por algo no arrancó, el primer toque en cualquier parte la inicia
+  ["touchend","click"].forEach(function(ev){
+    document.addEventListener(ev,function(){ if(!empezada) window.sonarMusica() },{passive:true});
+  });
+  // pausa al salir de la pestaña / bloquear el teléfono, y reanuda al volver
+  document.addEventListener("visibilitychange",function(){
+    if(document.hidden){ if(!a.paused){porFondo=true;a.pause()} }
+    else if(porFondo&&!pausadaPorUsuario){porFondo=false;a.play().catch(function(){})}
+  });
+})();
+</script>
 <script>
 (function(){
   var root=document.documentElement, intro=document.getElementById("intro"), vid=document.getElementById("vid"), done=false;
@@ -183,6 +254,7 @@
 
   function iniciar(){
     if(intro.classList.contains("play"))return;
+    window.sonarMusica();   // mismo toque = permiso de audio (iOS/Safari)
     intro.classList.add("play");
     var p=vid.play();
     if(p&&p.catch) p.catch(function(){reveal(true)});
@@ -190,7 +262,7 @@
     setTimeout(function(){if(!done&&vid.currentTime<.1)reveal(true)},5000);
   }
   document.querySelector("#intro .stage").addEventListener("click",function(e){if(e.target.id!=="saltar")iniciar()});
-  document.getElementById("saltar").addEventListener("click",function(){reveal(true)});
+  document.getElementById("saltar").addEventListener("click",function(){window.sonarMusica();reveal(true)});
   vid.addEventListener("timeupdate",function(){ if(vid.duration && vid.currentTime>=vid.duration-1.1) reveal(false) });
   vid.addEventListener("ended",function(){reveal(false)});
   document.getElementById("srcFin").addEventListener("error",function(){reveal(true)});
@@ -216,8 +288,32 @@
   <small>Rojo y dorado</small>
   <button type="button" onclick="vest.close()">Cerrar</button>
 </dialog>
+<dialog id="reg" aria-labelledby="rt">
+  <h2 id="rt">Mesa de regalos</h2>
+  <div class="scr">Con cariño</div>
+  <!-- Lista principal de Amazon -->
+  <a id="amz" class="lista" href="https://www.amazon.com/hz/wishlist/dl/invite/AQICAHild4Vpadjqcz7bdgUf6Qu6-OaRt7P_FJRNNbyMlg-OQwEi748cC6sCjQY0-hkCCu6rAAAAkTCBjgYJKoZIhvcNAQcGoIGAMH4CAQAweQYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzstBiATmlcl3rveBMCARCATPt-3jUNcp5bmUaHBR-s3KrpAVqkVS3lzfu8MKn2Xt-5lQXTB5kZyCWbgXNmtewkSti50xE8LqsX5kq582WmnHzGZD4r2rYeM6dSP-I?ref_=wl_share" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-2.2A3 3 0 0 0 12 3.8 3 3 0 0 0 6.2 7H4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8h1a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM15 5a1 1 0 1 1 0 2h-2a2 2 0 0 1 2-2zM9 5a2 2 0 0 1 2 2H9a1 1 0 1 1 0-2zm2 15H7v-8h4zm0-10H5V9h6zm6 10h-4v-8h4zm2-10h-6V9h6z"/></svg>
+    Ver lista en Amazon</a>
+  <div class="sep">Otras ideas</div>
+  <ul>
+    <li><em>Gift cards</em><b>Tarjetas de regalo</b></li>
+    <li><em>Pulsera Pandora</em><b>Moments Sparkling Infinity Heart Clasp Snake Chain</b>
+      <a href="https://us.pandora.net/en/bracelets/charm-bracelets/pandora-moments-sparkling-infinity-heart-clasp-snake-chain-bracelet/592645C01.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/bracelets/charm-bracelets/pandora-moments</span></a></li>
+    <li><em>Charm Pandora</em><b>Tropical Starfish &amp; Shell Clip Charm</b>
+      <a href="https://us.pandora.net/en/charms/tropical-starfish-shell-clip-charm/791678C01.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/charms/tropical-starfish-shell-clip-charm</span></a></li>
+    <li><em>Charm Pandora</em><b>Opalescent Purple Charm</b>
+      <a href="https://us.pandora.net/en/charms/opalescent-purple-charm/791691C05.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/charms/opalescent-purple-charm</span></a></li>
+    <li><em>Charm Pandora</em><b>Wavy Dark Blue Murano Glass Ocean Charm</b>
+      <a href="https://us.pandora.net/en/charms/wavy-dark-blue-murano-glass-ocean-charm/798938C00.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/charms/wavy-dark-blue-murano-glass-ocean-charm</span></a></li>
+    <li><em>Cadena de seguridad Pandora</em><b>Triple Blue Stone Safety Chain</b>
+      <a href="https://us.pandora.net/en/charms/triple-blue-stone-safety-chain/791688C01.html?product_finding_method=plp_search" target="_blank" rel="noopener"><span>us.pandora.net/en/charms/triple-blue-stone-safety-chain</span></a></li>
+  </ul>
+  <button type="button" onclick="reg.close()">Cerrar</button>
+</dialog>
 <script>
   vest.addEventListener("click",function(e){if(e.target===vest)vest.close()});
+  reg.addEventListener("click",function(e){if(e.target===reg)reg.close()});
 </script>
 </body>
 </html>
