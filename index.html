@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Invitación Anthonella</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;min-height:100dvh;background:#2a0509}
+  #inv{position:relative;width:100%;max-width:480px;margin:0 auto}
+  #inv img{display:block;width:100%;aspect-ratio:1080/2340;object-fit:fill}
+  #inv a,#inv b{position:absolute}
+  /* cuenta regresiva: tapa los "00" de la imagen con el color del círculo */
+  #inv b{width:10.5%;height:3.2%;margin:-1.6% 0 0 -5.25%;top:40.1%;background:#eed9c7;border-radius:50%;
+         color:#7a0f1a;font:700 clamp(18px,6vw,28px)/1 Georgia,serif;
+         display:flex;align-items:center;justify-content:center}
+</style>
+<div id="inv">
+  <img src="invitacion.webp" alt="Invitación 15 años Anthonella">
+
+  <b id="d" style="left:35.2%">00</b>
+  <b id="h" style="left:51.6%">00</b>
+  <b id="m" style="left:67.9%">00</b>
+  <b id="s" style="left:84.3%">00</b>
+
+  <!-- TODO: poner los enlaces reales -->
+  <a href="#ubicacion" style="left:31.9%;top:61.4%;width:28.9%;height:4%"></a>
+  <a href="https://wa.me/1809XXXXXXX" style="left:63.2%;top:61.4%;width:32.4%;height:4%"></a>
+  <a href="#vestimenta" style="left:42.1%;top:75.7%;width:16.2%;height:2.1%"></a>
+  <a href="#regalos" style="left:72.5%;top:75.7%;width:16.4%;height:2.1%"></a>
+</div>
+<script>
+  var fin = new Date("2026-12-19T18:15:00-04:00");
+  function t(){
+    var r = Math.max(0, fin - Date.now()), p = function(n){return String(n).padStart(2,"0")};
+    d.textContent = p(Math.floor(r/864e5));
+    h.textContent = p(Math.floor(r/36e5)%24);
+    m.textContent = p(Math.floor(r/6e4)%60);
+    s.textContent = p(Math.floor(r/1e3)%60);
+  }
+  t(); setInterval(t,1000);
+</script>
+
+</body></html>
