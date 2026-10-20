@@ -1,32 +1,126 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Invitación Anthonella</title>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Invitación Camila Juliao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root{color-scheme:dark}
-  body{margin:0;min-height:100dvh;background:#2a0509}
-  #inv{position:relative;width:100%;max-width:480px;margin:0 auto}
-  #inv img{display:block;width:100%;aspect-ratio:1080/2340;object-fit:fill}
-  #inv a,#inv b{position:absolute}
-  /* cuenta regresiva: tapa los "00" de la imagen con el color del círculo */
-  #inv b{width:10.5%;height:3.2%;margin:-1.6% 0 0 -5.25%;top:40.1%;background:#eed9c7;border-radius:50%;
-         color:#7a0f1a;font:700 clamp(18px,6vw,28px)/1 Georgia,serif;
-         display:flex;align-items:center;justify-content:center}
+  :root{color-scheme:dark;--vino:#8a1220;--oro:#b88a3b;--tinta:#3b2a2a;
+    --caps:"Cinzel",Georgia,"Times New Roman",serif;--script:"Great Vibes","Snell Roundhand","Brush Script MT",cursive}
+  html,body{margin:0;background:#2a0509}
+  body{min-height:100dvh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  #inv{position:relative;width:100%;max-width:480px;margin:0 auto;container-type:inline-size;overflow:hidden}
+  #inv>img{display:block;width:100%;height:auto;aspect-ratio:1080/2026}
+  .t{position:absolute;transform:translate(-50%,-50%);text-align:center;white-space:nowrap;margin:0}
+  .caps{font-family:var(--caps);font-weight:600;color:var(--tinta);text-transform:uppercase}
+  .scr{font-family:var(--script);color:var(--vino);font-weight:400;line-height:1}
+
+  /* textos */
+  #pre{left:51.1%;top:14.4%;font-size:2.3cqw;letter-spacing:.13em;line-height:1.6}
+  #nom{left:52.7%;top:20.2%;font-size:13cqw}
+  #par{left:53.7%;top:28.6%;font:italic 2.35cqw/1.2 Georgia,"Times New Roman",serif;color:var(--tinta)}
+  #fal{left:59.8%;top:34%;font-size:1.9cqw;letter-spacing:.5em;margin-left:.25em;font-weight:500}
+  #gra{left:59.7%;top:36.5%;font-size:6.4cqw}
+  #dic{left:61.7%;top:48.1%;font-size:2.3cqw;letter-spacing:.14em}
+  #sab{left:39.3%;top:51.1%;font-size:2.3cqw;letter-spacing:.1em}
+  #hor{left:84.2%;top:51.1%;font-size:2.2cqw;letter-spacing:.08em}
+  #dia{left:62%;top:51.2%;font:700 7.4cqw/1 "Playfair Display",Georgia,serif;color:var(--oro)}
+
+  /* cuenta regresiva */
+  .n{font:700 6.4cqw/1 "Playfair Display",Georgia,serif;color:var(--vino);top:40.13%;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.02em}
+  .l{top:43.05%;font-size:1.75cqw;letter-spacing:.1em;font-weight:500}
+
+  /* ubicación */
+  #ubi{position:absolute;left:58.4%;top:55.9%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:3.2cqw;white-space:nowrap}
+  #ubi svg{width:4.6cqw;height:4.6cqw;fill:var(--oro);flex:none}
+  #ubi div{text-align:center;line-height:1.5}
+  #ubi .caps{font-size:2cqw;letter-spacing:.1em;display:block}
+  #ubi i{font:italic 2.1cqw/1.35 Georgia,serif;color:var(--tinta);display:block}
+
+  /* botones */
+  .btn{position:absolute;top:61.4%;height:4.1%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:2.2cqw;
+    text-decoration:none;color:#f8ead0;font:600 1.85cqw/1.35 var(--caps);letter-spacing:.12em;text-transform:uppercase;text-align:left;
+    background:linear-gradient(180deg,#a3182a 0%,#7a0f1c 55%,#5e0914 100%);border:.35cqw solid #c9a24b;border-radius:999px;
+    box-shadow:0 .6cqw 1.6cqw rgba(70,6,14,.35),inset 0 .2cqw .4cqw rgba(255,226,170,.35)}
+  .btn svg{width:4.6cqw;height:4.6cqw;fill:#f3d89b;flex:none}
+  #b1{left:31.9%;width:28.9%}#b2{left:63.2%;width:32.4%}
+
+  /* vestimenta / regalos */
+  .col{top:73.8%;font-size:1.85cqw;letter-spacing:.1em;line-height:1.5}
+  .pill{position:absolute;top:75.7%;height:2.1%;box-sizing:border-box;border:.3cqw solid #c9a24b;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;background:rgba(255,248,235,.5)}
+  .pill::after{content:"\203A";display:grid;place-items:center;width:2.5cqw;height:2.5cqw;border-radius:50%;background:#b88a3b;color:#fff;font:700 2.2cqw/1 Georgia,serif;padding-bottom:.2cqw;box-sizing:border-box}
+  #p1{left:42.1%;width:16.2%}#p2{left:72.5%;width:16.4%}
+  #esp{left:66.7%;top:83.9%;font-size:7cqw}
+  a:focus-visible{outline:2px solid #f3d89b;outline-offset:2px}
+  /* ventana de vestimenta */
+  #vest{border:2px solid #c9a24b;border-radius:22px;padding:26px 24px 22px;max-width:min(86vw,340px);background:linear-gradient(180deg,#fff8ee,#f6e6d4);
+    color:var(--tinta);text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.5);font-family:var(--caps)}
+  #vest::backdrop{background:rgba(30,3,7,.72);backdrop-filter:blur(3px)}
+  #vest h2{margin:0 0 4px;font:600 15px/1.3 var(--caps);letter-spacing:.16em;text-transform:uppercase;color:var(--vino)}
+  #vest .formal{font:400 44px/1.1 var(--script);color:var(--vino);margin:6px 0 14px}
+  #vest p{margin:0 0 14px;font:600 12px/1.5 var(--caps);letter-spacing:.14em;text-transform:uppercase}
+  #vest .dots{display:flex;justify-content:center;gap:22px;margin:4px 0 12px}
+  #vest .dot{position:relative;width:54px;height:54px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 3px 8px rgba(0,0,0,.25)}
+  #vest .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;
+    background:linear-gradient(45deg,transparent calc(50% - 2.5px),#3b2a2a calc(50% - 2.5px) calc(50% + 2.5px),transparent calc(50% + 2.5px));
+    box-shadow:0 0 0 2.5px #3b2a2a inset;box-sizing:border-box}
+  #vest .rojo{background:radial-gradient(circle at 35% 30%,#c4283a,#7a0f1c)}
+  #vest .oro{background:radial-gradient(circle at 35% 30%,#f0d58b,#b88a3b)}
+  #vest small{display:block;font:italic 13px/1.4 Georgia,serif;text-transform:none;letter-spacing:0;color:#5a4040;margin-bottom:16px}
+  #vest button{font:600 12px var(--caps);letter-spacing:.14em;text-transform:uppercase;color:#f8ead0;border:2px solid #c9a24b;border-radius:999px;
+    background:linear-gradient(180deg,#a3182a,#5e0914);padding:10px 26px;cursor:pointer}
 </style>
+</head>
+<body>
 <div id="inv">
-  <img src="invitacion.webp" alt="Invitación 15 años Anthonella">
+  <img src="invitacion.webp" alt="Fondo de la invitación de 15 años de Camila Juliao" width="2160" height="4052">
 
-  <b id="d" style="left:35.2%">00</b>
-  <b id="h" style="left:51.6%">00</b>
-  <b id="m" style="left:67.9%">00</b>
-  <b id="s" style="left:84.3%">00</b>
+  <p id="pre" class="t caps">Acompáñanos a celebrar<br>los 15 años de:</p>
+  <h1 id="nom" class="t scr" style="font-weight:400">Camila Juliao</h1>
+  <p id="par" class="t">Con la bendición de Dios y el amor de mi familia,<br>me siento muy feliz de llegar a este momento de mi vida.<br>Los invito a compartir conmigo este día tan especial.</p>
 
-  <!-- TODO: poner los enlaces reales -->
-  <a href="#ubicacion" style="left:31.9%;top:61.4%;width:28.9%;height:4%"></a>
-  <a href="https://wa.me/1809XXXXXXX" style="left:63.2%;top:61.4%;width:32.4%;height:4%"></a>
-  <a href="#vestimenta" style="left:42.1%;top:75.7%;width:16.2%;height:2.1%"></a>
-  <a href="#regalos" style="left:72.5%;top:75.7%;width:16.4%;height:2.1%"></a>
+  <p id="fal" class="t caps">Faltan</p>
+  <p id="gra" class="t scr">Para mi Gran Día</p>
+
+  <b id="d" class="t n" style="left:35.1%">00</b>
+  <b id="h" class="t n" style="left:51.6%">00</b>
+  <b id="m" class="t n" style="left:67.95%">00</b>
+  <b id="s" class="t n" style="left:84.3%">00</b>
+  <span class="t caps l" style="left:35.1%">Días</span>
+  <span class="t caps l" style="left:51.6%">Horas</span>
+  <span class="t caps l" style="left:67.95%">Minutos</span>
+  <span class="t caps l" style="left:84.3%">Segundos</span>
+
+  <p id="dic" class="t caps">Noviembre</p>
+  <p id="sab" class="t caps">Domingo</p>
+  <p id="dia" class="t">15</p>
+  <p id="hor" class="t caps">3:30 p.m.</p>
+
+  <div id="ubi">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+    <div><span class="caps">Ubicación:</span><i>Casa España</i><i>El Salón Terraza del Mar</i></div>
+  </div>
+
+  <a id="b1" class="btn" href="https://maps.app.goo.gl/a8GFQdtFrKW48Ck57" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+    <span>Ver<br>ubicación</span></a>
+  <a id="b2" class="btn" href="https://wa.me/18293403146?text=Confirmo%20mi%20asistencia%20a%20los%2015%20a%C3%B1os%20de%20Camila%20Juliao" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+    <span>Confirmar<br>asistencia</span></a>
+
+  <p class="t caps col" style="left:50.2%">Código de<br>vestimenta</p>
+  <p class="t caps col" style="left:80.6%">Mesa de<br>regalos</p>
+  <a id="p1" class="pill" href="#vestimenta" aria-label="Ver código de vestimenta" onclick="vest.showModal();return false"></a>
+  <a id="p2" class="pill" href="#regalos" aria-label="Ver mesa de regalos"></a>
+
+  <p id="esp" class="t scr">¡Te esperamos!</p>
 </div>
 <script>
-  var fin = new Date("2026-12-19T18:15:00-04:00");
+  var fin = new Date("2026-11-15T15:30:00-04:00");
   function t(){
     var r = Math.max(0, fin - Date.now()), p = function(n){return String(n).padStart(2,"0")};
     d.textContent = p(Math.floor(r/864e5));
@@ -36,5 +130,16 @@
   }
   t(); setInterval(t,1000);
 </script>
-
-</body></html>
+<dialog id="vest" aria-labelledby="vt">
+  <h2 id="vt">Código de vestimenta</h2>
+  <div class="formal">Formal</div>
+  <p>Color exclusivo</p>
+  <div class="dots"><span class="dot rojo" role="img" aria-label="Rojo, no usar"></span><span class="dot oro" role="img" aria-label="Dorado, no usar"></span></div>
+  <small>Rojo y dorado</small>
+  <button type="button" onclick="vest.close()">Cerrar</button>
+</dialog>
+<script>
+  vest.addEventListener("click",function(e){if(e.target===vest)vest.close()});
+</script>
+</body>
+</html>
